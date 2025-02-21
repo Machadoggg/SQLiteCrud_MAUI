@@ -27,5 +27,10 @@ namespace SQLiteCrud_MAUI
         {
             await _connection.InsertAsync(customer);
         }
+
+        public async Task Update(Customer customer)
+        {
+            await _connection.UpdateAsync(customer);
+        }
     }
 }
