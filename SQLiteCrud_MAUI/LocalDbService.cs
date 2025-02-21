@@ -32,5 +32,10 @@ namespace SQLiteCrud_MAUI
         {
             await _connection.UpdateAsync(customer);
         }
+
+        public async Task Delete(Customer customer)
+        {
+            await _connection.DeleteAsync(customer);
+        }
     }
 }
