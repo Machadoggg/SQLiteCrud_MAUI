@@ -17,5 +17,10 @@ namespace SQLiteCrud_MAUI
         {
             return await _connection.Table<Customer>().ToListAsync();
         }
+
+        public async Task<Customer> GetById(int id)
+        {
+            return await _connection.Table<Customer>().Where(c => c.Id == id).FirstOrDefaultAsync();
+        }
     }
 }
