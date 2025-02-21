@@ -15,7 +15,8 @@ namespace SQLiteCrud_MAUI
 
         public async Task<List<Customer>> GetCustomers()
         {
-            return await _connection.Table<Customer>().ToListAsync();
+            var customer = await _connection.Table<Customer>().ToListAsync();
+            return customer.OrderByDescending(c => c.Id).ToList();
         }
 
         public async Task<Customer> GetById(int id)
