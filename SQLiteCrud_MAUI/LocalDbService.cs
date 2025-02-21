@@ -22,5 +22,10 @@ namespace SQLiteCrud_MAUI
         {
             return await _connection.Table<Customer>().Where(c => c.Id == id).FirstOrDefaultAsync();
         }
+
+        public async Task Create(Customer customer)
+        {
+            await _connection.InsertAsync(customer);
+        }
     }
 }
